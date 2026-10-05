@@ -5,7 +5,7 @@ function App() {
   const [todos, setTodos] = useState([])
 
   useEffect(() => {
-    fetch('https://localhost:7124/api/todo')
+    fetch(`${import.meta.env.VITE_API_URL}/api/todo`)
       .then(response => response.json())
       .then(data => setTodos(data))
       .catch(error => console.error('Kunde inte hämta todos:', error))
